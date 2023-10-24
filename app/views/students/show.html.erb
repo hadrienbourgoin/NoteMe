@@ -1,0 +1,11 @@
+<h2><%= @student.firstname %></h2>
+<button>
+  <%= link_to '+', new_note_path(query: @student.id) %>
+</button>
+<% @student.notes.each do |note| %>
+  <p>
+    <%= note.description %>
+    <button><%= link_to '!', edit_note_path(note) %></button>
+    <button><%= link_to 'x', note_path(note), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+  <p>
+<% end %>

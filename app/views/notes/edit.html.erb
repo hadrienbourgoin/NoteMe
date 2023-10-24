@@ -1,0 +1,6 @@
+<div class="super-form">
+  <%= simple_form_for(@note, url: note_path(query: @note.student), method: :patch) do |f| %>
+    <%= f.input :description, placeholder: @note.description %>
+    <%= f.submit "Save", class: "super-button" %>
+  <% end %>
+</div>

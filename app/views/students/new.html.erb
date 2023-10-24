@@ -1,0 +1,7 @@
+<div class="super-form">
+  <%= simple_form_for :student, url: group_student_path do |f| %>
+    <%= f.input :firstname %>
+    <%= f.input :lastname %>
+    <%= f.submit "Save", class: "super-button" %>
+  <% end %>
+</div>
