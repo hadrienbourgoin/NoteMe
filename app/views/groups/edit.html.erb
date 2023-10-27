@@ -1,6 +1,6 @@
 <div class="super-form">
   <%= simple_form_for(@group) do |f| %>
-    <%= f.input :name, placeholder: @group.name %>
+    <%= f.input :name, placeholder: @group.name, label: 'Group name', maxlength: 20 %>
     <%= f.submit "Save", class: "super-button" %>
   <% end %>
 </div>

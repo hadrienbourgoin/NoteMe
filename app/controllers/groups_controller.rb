@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   def index
     if user_signed_in?
-      @groups = Group.where(user: current_user)
+      @groups = Group.where(user: current_user).order('updated_at DESC')
       @groups = [] if @groups.nil?
     else
       redirect_to new_user_session_path

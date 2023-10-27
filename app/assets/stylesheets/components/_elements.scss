@@ -1,0 +1,43 @@
+.div200 {
+  width: 200px;
+  background: rgb(186, 186, 186);
+  padding: 12px;
+}
+.div200:hover {
+  filter: brightness(85%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  background: rgb(255, 255, 184);
+  height: 100vh;
+}
+
+body {
+  margin: 0px;
+  height: 100vh;
+}
+
+.account {
+  background: rgb(186, 186, 186);
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  text-align: center;
+
+  a {
+    vertical-align: -10px;
+  }
+}
+
+.super-form {
+  max-width: 50%;
+
+  input {
+    max-width: 50%;
+  }
+}

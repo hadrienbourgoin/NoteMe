@@ -1,11 +1,12 @@
 <h2><%= @group.name %></h2>
-<button>
+<button class='h42'>
   <%= link_to '+', new_group_student_path(@group) %>
 </button>
-<% @group.students.each do |student| %>
-  <p>
-    <%= link_to student.firstname, group_student_path(@group, student) %>
+<% students = @group.students.order('updated_at DESC') %>
+<% students.each do |student| %>
+  <div class='flex'>
+    <%= link_to student.firstname, group_student_path(@group, student), class: 'div200' %>
     <button><%= link_to '!', edit_group_student_path(@group, student) %></button>
     <button><%= link_to 'x', group_student_path(@group, student), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-  <p>
+  </div><br>
 <% end %>

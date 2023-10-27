@@ -11,13 +11,15 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <% if user_signed_in? %>
-      <p><%= link_to current_user.username, groups_path %></p>
-    <% end %>
-
-    <%= yield %>
+    <div class='container flex-center'>
+      <div>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <% if user_signed_in? %>
+          <div class='account'><%= link_to current_user.username, groups_path %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
