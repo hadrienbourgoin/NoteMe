@@ -1,12 +1,30 @@
-<h2><%= @group.name %></h2>
-<button class='h42'>
-  <%= link_to '+', new_group_student_path(@group) %>
-</button>
 <% students = @group.students.order('updated_at DESC') %>
-<% students.each do |student| %>
+<div data-controller='randomizer', data-randomizer-students-value="<%= students.to_json %>">
+  <h2><%= @group.name %></h2>
   <div class='flex'>
-    <%= link_to student.firstname, group_student_path(@group, student), class: 'div200' %>
-    <button><%= link_to '!', edit_group_student_path(@group, student) %></button>
-    <button><%= link_to 'x', group_student_path(@group, student), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-  </div><br>
-<% end %>
+    <button class='h42'>
+      <%= link_to '+', new_group_student_path(@group) %>
+    </button>
+    <button class='w80', data-action="click->randomizer#toggle">
+      <%= 'Randomize' %>
+    </button>
+  </div>
+  <% students.each do |student| %>
+    <div class='flex'>
+      <%= link_to student.firstname, group_student_path(@group, student), class: 'div200' %>
+      <button><%= link_to '!', edit_group_student_path(@group, student) %></button>
+      <button><%= link_to 'x', group_student_path(@group, student), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+    </div><br>
+  <% end %>
+
+  <div data-randomizer-target='modal', class='hidden'>
+    <select data-randomizer-target='select'>
+      <% students.each_with_index do |student, index| %>
+        <option><%= index + 1 %></option>
+      <% end %>
+    </select>
+    <button data-action="click->randomizer#randomize">Go</button>
+  </div>
+  <div data-randomizer-target='result'>
+  </div>
+</div>
