@@ -13,11 +13,9 @@
   <body>
     <div class='container flex-center'>
       <div>
+        <%= render 'layouts/navbar' %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <% if user_signed_in? %>
-          <div class='account'><%= link_to current_user.username, groups_path %></div>
-        <% end %>
         <%= yield %>
       </div>
     </div>

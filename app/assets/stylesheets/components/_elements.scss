@@ -1,6 +1,6 @@
 .div200 {
   width: 200px;
-  background: rgb(186, 186, 186);
+  background: white;
   padding: 12px;
 }
 .div200:hover {
@@ -13,7 +13,7 @@ a {
 }
 
 .container {
-  background: rgb(255, 255, 184);
+  background: rgb(0, 134, 0);
   height: 100vh;
 }
 
@@ -23,11 +23,13 @@ body {
 }
 
 .account {
-  background: rgb(186, 186, 186);
+  background: white;
   height: 42px;
   width: 42px;
   border-radius: 50%;
   text-align: center;
+  margin-top: 8px;
+  margin-bottom: 4px;
 
   a {
     vertical-align: -10px;
@@ -35,9 +37,28 @@ body {
 }
 
 .super-form {
-  max-width: 50%;
+  width: 100%;
 
   input {
-    max-width: 50%;
+    min-width: 50%;
   }
+}
+
+.notice, .alert {
+  position: absolute;
+  background: rgb(255, 255, 179);
+  animation: hideme 5s;
+  animation-fill-mode: forwards;
+}
+@keyframes hideme {
+  to {
+    visibility: hidden;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.navbar {
+  margin-bottom: 12px;
 }
