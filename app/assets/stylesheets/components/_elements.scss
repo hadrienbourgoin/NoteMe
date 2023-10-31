@@ -14,12 +14,12 @@ a {
 
 .container {
   background: rgb(0, 134, 0);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
   margin: 0px;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .home {

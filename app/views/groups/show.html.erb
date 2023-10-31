@@ -33,7 +33,9 @@
           <div class='h22 w22 small-button'><%= link_to 'x', grade_path(grade), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
         </div>
       <% end %>
-      <span class='pt4'><%= "Avg: #{(avg / student.grades.count).to_i}/20" %></span>
+      <% if student.grades.count > 0 %>
+        <span class='pt4'><%= "Avg: #{(avg / student.grades.count).to_i}/20" %></span>
+      <% end %>
       <div class='h22 w22 small-button'>
         <%= link_to '+', new_grade_path(query: student) %>
       </div>
