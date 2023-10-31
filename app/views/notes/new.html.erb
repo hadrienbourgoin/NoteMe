@@ -1,6 +1,6 @@
 <div class="super-form">
   <%= simple_form_for @note, url: notes_path(query: params[:query]) do |f| %>
-    <%= f.input :description, label: 'Note', maxlength: 255 %>
+    <%= f.input :description, label: 'Note', maxlength: 255, as: :text %>
     <%= f.submit "Save", class: "super-button" %>
   <% end %>
 </div>

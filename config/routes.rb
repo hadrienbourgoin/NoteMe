@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :students, only: %i[destroy new create edit update show]
   end
   resources :notes, only: %i[destroy new create edit update]
+  resources :grades, only: %i[new create destroy]
 end

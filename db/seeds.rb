@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.destroy_all
-guillaume = User.create(email: "test1@gmail.com",
+guillaume = User.create(email: "test@gmail.com",
   password: "azerty",
   password_confirmation: "azerty",
   firstname: 'Guillaume',
@@ -41,3 +41,7 @@ jean = Student.create(firstname: 'Jean', lastname: 'Jean', group: term)
 Note.create(description: 'Ajd Mohamed a bien travaillé', student: mohamed)
 Note.create(description: 'Romuald me doit 2e', student: romuald)
 Note.create(description: 'Sisoko doit faire plus d\'efforts', student: sisoko)
+
+20.times do
+  Grade.create(grade: (0..20).to_a.sample, student: Student.all.sample)
+end

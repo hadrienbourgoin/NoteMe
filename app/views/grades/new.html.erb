@@ -1,0 +1,6 @@
+<div class="super-form">
+  <%= simple_form_for @grade, url: grades_path(query: params[:query]) do |f| %>
+    <%= f.input :grade, step: 0.01, as: :numeric %>
+    <%= f.submit "Save", class: "super-button" %>
+  <% end %>
+</div>

@@ -1,10 +1,12 @@
 button {
   min-width: 42px;
   padding: 4px;
+  background: lightgray;
 }
 
 button:hover {
   cursor: pointer;
+  background: rgb(200, 200, 200);
 }
 
 .super-button {
@@ -20,4 +22,14 @@ button > a {
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.small-button {
+  background: lightgray;
+  border: 2px solid black;
+  text-align: center;
+}
+.small-button:hover {
+  background: rgb(200, 200, 200);
+  cursor: pointer;
 }

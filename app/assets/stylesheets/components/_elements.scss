@@ -22,10 +22,11 @@ body {
   height: 100vh;
 }
 
-.account {
+.home {
   background: white;
-  height: 42px;
   width: 42px;
+  height: 42px;
+  padding: 4px;
   border-radius: 50%;
   text-align: center;
   margin-top: 8px;
@@ -33,7 +34,16 @@ body {
 
   a {
     vertical-align: -10px;
+    height: 100%;
   }
+}
+.home:hover {
+  background: rgb(240, 240, 240);
+  cursor: pointer;
+}
+.home-img img {
+  width: 42px;
+  height: 42px;
 }
 
 .super-form {
@@ -46,8 +56,8 @@ body {
 
 .notice, .alert {
   position: absolute;
-  background: rgb(255, 255, 179);
-  animation: hideme 5s;
+  background: white;
+  animation: hideme 10s;
   animation-fill-mode: forwards;
 }
 @keyframes hideme {
@@ -60,5 +70,6 @@ body {
 }
 
 .navbar {
-  margin-bottom: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }

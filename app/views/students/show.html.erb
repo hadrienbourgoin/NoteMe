@@ -1,5 +1,5 @@
-<h2><%= @student.firstname %></h2>
-<button class='h42'>
+<h2 class='mt4 mb4'><%= @student.firstname %></h2>
+<button class='h42 mb8'>
   <%= link_to '+', new_note_path(query: @student.id) %>
 </button>
 <% @student.notes.order('updated_at DESC').each do |note| %>
@@ -7,5 +7,5 @@
     <div class='div200'><%= note.description %></div>
     <button><%= link_to '!', edit_note_path(note) %></button>
     <button><%= link_to 'x', note_path(note), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
-  </div>
+  </div><br>
 <% end %>

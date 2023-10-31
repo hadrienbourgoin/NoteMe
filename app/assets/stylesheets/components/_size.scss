@@ -2,14 +2,25 @@
   width: 200px;
 }
 
+.h22 {
+  height: 22px;
+}
 .h42 {
   height: 42px;
 }
 
+.w22 {
+  width: 22px;
+}
 .w80 {
   width: 80px;
 }
 
 .w5pe {
   width: 50%;
+}
+
+textarea {
+  min-height: 100px;
+  min-width: 200px;
 }

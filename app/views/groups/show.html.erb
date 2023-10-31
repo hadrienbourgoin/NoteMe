@@ -1,7 +1,7 @@
 <% students = @group.students.order('updated_at DESC') %>
 <div data-controller='randomizer', data-randomizer-students-value="<%= students.to_json %>">
-  <h2><%= @group.name %></h2>
-  <div class='flex'>
+  <h2 class='mt4 mb4'><%= @group.name %></h2>
+  <div class='flex mb8'>
     <button class='h42'>
       <%= link_to '+', new_group_student_path(@group) %>
     </button>
@@ -14,6 +14,20 @@
       <%= link_to student.firstname, group_student_path(@group, student), class: 'div200' %>
       <button><%= link_to '!', edit_group_student_path(@group, student) %></button>
       <button><%= link_to 'x', group_student_path(@group, student), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+    </div>
+    <div class='grid3'>
+      <% avg = 0 %>
+      <% student.grades.order('updated_at DESC').each do |grade| %>
+        <% avg += grade.grade %>
+        <div class='flex'>
+          <span class='pt4'><%= "#{grade.grade}/20" %></span>
+          <div class='h22 w22 small-button'><%= link_to 'x', grade_path(grade), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></div>
+        </div>
+      <% end %>
+      <span class='pt4'><%= "Avg: #{(avg / student.grades.count).to_i}/20" %></span>
+      <div class='h22 w22 small-button'>
+        <%= link_to '+', new_grade_path(query: student) %>
+      </div>
     </div><br>
   <% end %>
 
