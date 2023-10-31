@@ -8,15 +8,15 @@
 
 User.destroy_all
 guillaume = User.create(email: "test@gmail.com",
-  password: "azerty",
-  password_confirmation: "azerty",
+  password: "Azerty-1",
+  password_confirmation: "Azerty-1",
   firstname: 'Guillaume',
   lastname: 'Malod',
-  username: 'LeG')
+  username: 'LeGrandG')
 
 xavier = User.create(email: "test2@gmail.com",
-  password: "azerty",
-  password_confirmation: "azerty",
+  password: "Azerty-1",
+  password_confirmation: "Azerty-1",
   firstname: 'Xavier',
   lastname: 'Lejeune',
   username: 'ProfesseurX')
