@@ -9,6 +9,15 @@
       <%= 'Randomize' %>
     </button>
   </div>
+  <div data-randomizer-target='modal', class='hidden'>
+    <select data-randomizer-target='select'>
+      <% students.each_with_index do |student, index| %>
+        <option><%= index + 1 %></option>
+      <% end %>
+    </select>
+    <button data-action="click->randomizer#randomize">Go</button>
+  </div>
+  <div data-randomizer-target='result'></div><br>
   <% students.each do |student| %>
     <div class='flex'>
       <%= link_to student.firstname, group_student_path(@group, student), class: 'div200' %>
@@ -30,15 +39,4 @@
       </div>
     </div><br>
   <% end %>
-
-  <div data-randomizer-target='modal', class='hidden'>
-    <select data-randomizer-target='select'>
-      <% students.each_with_index do |student, index| %>
-        <option><%= index + 1 %></option>
-      <% end %>
-    </select>
-    <button data-action="click->randomizer#randomize">Go</button>
-  </div>
-  <div data-randomizer-target='result'>
-  </div>
 </div>
