@@ -13,4 +13,4 @@
  *= require_tree .
  *= require_self
  */
- @import "/home/hadrien/code/hadrienbourgoin/NoteMe/app/assets/stylesheets/components/_index.scss";
+ @import "components/index";
