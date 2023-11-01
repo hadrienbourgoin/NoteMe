@@ -1,4 +1,4 @@
-<% students = @group.students.order('updated_at DESC') %>
+<% students = @group.students.order('LOWER(firstname) ASC') %>
 <div data-controller='randomizer', data-randomizer-students-value="<%= students.to_json %>">
   <h2 class='mt4 mb4'><%= @group.name %></h2>
   <div class='flex mb8'>
