@@ -1,3 +1,7 @@
+<h2 class='mt4 mb4'>
+  <%= link_to Student.find(params[:query]).group.name, group_path(Student.find(params[:query]).group) %> &lt
+  <%= link_to Student.find(params[:query]).firstname, group_student_path(Student.find(params[:query]).group, Student.find(params[:query])) %>
+</h2>
 <div class="super-form">
   <%= simple_form_for @note, url: notes_path(query: params[:query]) do |f| %>
     <%= f.input :description, label: 'Note', maxlength: 255, as: :text %>

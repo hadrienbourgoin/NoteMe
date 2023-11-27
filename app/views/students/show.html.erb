@@ -1,4 +1,7 @@
-<h2 class='mt4 mb4'><%= @student.firstname %></h2>
+<h2 class='mt4 mb4'>
+  <%= link_to @student.group.name, group_path(@student.group) %> &lt
+  <%= @student.firstname %>
+</h2>
 <button class='h42 mb8'>
   <%= link_to '+', new_note_path(query: @student.id) %>
 </button>

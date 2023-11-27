@@ -1,3 +1,7 @@
+<h2 class='mt4 mb4'>
+  <%= link_to 'Home', groups_path %> &lt
+  <%= link_to Group.find(params[:group_id]).name, group_path(params[:group_id]) %>
+</h2>
 <div class="super-form">
   <%= simple_form_for :student, url: group_students_path do |f| %>
     <%= f.input :firstname, label: 'Firstname/Surname', maxlength: 20 %>

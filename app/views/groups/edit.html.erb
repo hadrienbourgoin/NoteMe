@@ -1,3 +1,6 @@
+<h2 class='mt4 mb4'>
+  <%= link_to 'Home', groups_path %>
+</h2>
 <div class="super-form">
   <%= simple_form_for(@group) do |f| %>
     <%= f.input :name, placeholder: @group.name, label: 'Group name', maxlength: 20 %>

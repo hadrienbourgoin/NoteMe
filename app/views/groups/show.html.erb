@@ -1,6 +1,9 @@
 <% students = @group.students.order('LOWER(firstname) ASC') %>
 <div data-controller='randomizer', data-randomizer-students-value="<%= students.to_json %>">
-  <h2 class='mt4 mb4'><%= @group.name %></h2>
+  <h2 class='mt4 mb4'>
+    <%= link_to 'Home', groups_path %> &lt
+    <%= @group.name %>
+  </h2>
   <div class='flex mb8'>
     <button class='h42'>
       <%= link_to '+', new_group_student_path(@group) %>
