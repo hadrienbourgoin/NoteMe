@@ -72,5 +72,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-
 gem 'simple_form'
+gem 'grape'
+gem 'rack-cors'
+gem 'grape-active_model_serializers'

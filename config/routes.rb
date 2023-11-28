@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   end
   resources :notes, only: %i[destroy new create edit update]
   resources :grades, only: %i[new create destroy]
+
+  mount API::Base, at: '/'
 end
